@@ -1,0 +1,63 @@
+/* GENERAL STYLES */
+
+header {
+    background-color: #d8e2dc;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+body {
+    background-color: #d8e2dc;
+    display: inline;
+    justify-content: center;
+}
+
+p {
+    font-size: 14pt;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    color: #745350;
+    line-height: 1.5;
+}
+
+button {
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    color:#745350;
+    margin: 20px; 
+    height: 100px;
+    width: 200px;
+}
+
+/* HEADER STYLES */
+
+header img {
+    display: flex;
+    justify-content: center;
+}
+
+header p {
+    margin-top: -20px;
+    padding: 10px;
+    font-size: 24pt;
+    font-weight: 600;
+    text-align: center;    
+}
+
+/* BODY STYLES */
+
+.card {
+    padding: 10px; 
+}
+
+.timer {
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+}
+
+.question-container {
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    color: #745350;
+    margin: 20px;     
+}
+
+.options-container {
+}
