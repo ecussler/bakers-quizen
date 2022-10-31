@@ -19,10 +19,20 @@ p {
     color: #745350;
     line-height: 1.5;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 30px;
+}
 
 button {
     font-family: Dosis, Arial, Helvetica, sans-serif;
     color:#745350;
+    border-width: 1px;
+    border-color: #745350;
+    border-radius: 20px;
     margin: 20px; 
     height: 100px;
     width: 200px;
@@ -38,7 +48,7 @@ header img {
 header p {
     margin-top: -20px;
     padding: 10px;
-    font-size: 24pt;
+    font-size: 18pt;
     font-weight: 600;
     text-align: center;    
 }
@@ -59,5 +69,8 @@ header p {
     margin: 20px;     
 }
 
-.options-container {
+button:hover {
+    background-color: #e7c1a9; 
+    border-width: 5px;
+    border-color: #ecaa8a; 
 }
