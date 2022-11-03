@@ -20,25 +20,29 @@
 <body>
     <div class="card">
         <section class="timer" id="timer">
-
-        </section>
-        <section class="question-container">
-            <h1>Question</h1>
-        </section>
-        <section class="options-container">
-            <button class="option" id="op1">Option 1</button>
-            <button class="option" id="op2">Option 2</button>
-            <button class="option" id="op3">Option 3</button>
-            <button class="option" id="op4">Option 4</button>
         </section>
         <br>
-        <section class="answer">
-            <p>Test</p>
-        </section>
+        <div class="scores" id="scores">
+            <p>Score</p>
+        </div>
+        <br>
+        <button class="start-btn btn" id="start-btn">START</button>
+        <div id="question-container" class="hide">
+            <section class="question" id="question">
+                <h1>Question</h1>
+            </section>
+            <section class="options-container">
+                <button class="option" id="op1">Option 1</button>
+                <button class="option" id="op2">Option 2</button>
+                <button class="option" id="op3">Option 3</button>
+                <button class="option" id="op4">Option 4</button>
+            </section>
+            <section class="answer">
+                <p>Test Answer</p>
+            </section>
+        </div>
     </div>    
-    <div class="scores" id="scores">
-
-    </div>
     <script src="./assets/script.js"></script>
 </body>
 </html>
+
