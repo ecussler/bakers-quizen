@@ -9,7 +9,7 @@
 */
 
 // QUESTIONS ARRAY //
-const questionsArray = [{
+let questionsArray = [{
     id: 0, 
     q: `Traditionally, what is the crust on a cheesecake made of?`, 
     a: [{text: `Graham cracker`, isCorrect: true}, 
@@ -130,6 +130,7 @@ const questionsArray = [{
 
 // VARIABLES //
 const startButton = document.getElementById('start-btn'); 
+const nextButton = document.getElementById('next-btn'); 
 const questionContainer = document.getElementById('question-container')
 const optionBtn = document.querySelectorAll('.option'); 
 const question = document.getElementById('question');
@@ -148,33 +149,43 @@ function startQuiz() {
 )}
 
 /**
- * 
+ * This function iterates through the answers in the questionsArray and populates them in the options buttons. 
  * @param {*} id 
  */
 
 function showQuestion(id) {
+    resetQuestion(); 
     question.innerText = questionsArray[id].q; 
 
     optionBtn.forEach((btn, i) => {
         btn.innerText = questionsArray[id].a[i].text; 
-        btn.value = questionsArray[id].a[i].isCorrect;
+        btn.nodeValue = questionsArray[id].a[i].isCorrect;
         btn.addEventListener('click', function() {
             console.log(questionsArray[id].a[i].text); 
-    });
-
-
-        // op1.innerText = ('');
-        // op2.innerText = ('');
-        // op3.innerText = ('');
-        // op4.innerText = ('');
-        // op1.value.remove;
-        // op2.value.remove; 
-        // op3.value.remove; 
-        // op4.value.remove; 
-        // showQuestion++; for each??
+            nextButton.classList.remove('hide'); 
+            console.log(questionsArray[id].a[i].nodeValue); 
+            // if (btn.value == true) {
+            //     btn.classList.add('correct');
+            // } else {
+            //     btn.classList.add('incorrect'); 
+            // }
+        });
     })
-    }
- 
+}
+
+function resetQuestion() {
+    nextButton.classList.add('hide'); 
+    question.innerText = ''; 
+    optionBtn.forEach((btn, i) => {
+        btn.innerText = ''; 
+        btn.nodeValue = ''; 
+    })
+ } 
+
+ nextButton.addEventListener('click', function() {
+    console.log('next clicked'); 
+    
+})
 
 startQuiz(); 
 showQuestion(0); 
