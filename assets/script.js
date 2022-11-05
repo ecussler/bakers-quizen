@@ -16,7 +16,7 @@ let questionsArray = [{
         {text: `Ladyfingers`, isCorrect: false }, 
         {text: 'Pastry', isCorrect: false}, 
         {text: 'Oreos', isCorrect: false}
-    ]
+    ],
 },
 {
     id: 1, 
@@ -130,29 +130,33 @@ let questionsArray = [{
 
 // VARIABLES //
 
-const startButton = document.getElementById('start-btn'); 
-const nextButton = document.getElementById('next-btn'); 
+const startBtn = document.getElementById('start-btn'); 
+const nextBtn = document.getElementById('next-btn'); 
+const optionBtn = document.querySelectorAll('.option');
 const submitBtn = document.getElementById('submit-btn'); 
+
+const timer = document.getElementById('timerTxt'); 
+let timeLeft = 500; 
+
 const questionContainer = document.getElementById('question-container');
 const question = document.getElementById('question');
-const optionBtn = document.querySelectorAll('.option');
-const answer = document.getElementById('answer');
-const scoreEl = document.getElementById('scores'); 
-const timer = document.getElementById('timerTxt'); 
-const userContainer = document.getElementById('user-container');
-// const username = document.getElementById('username'); 
 let questionCount = 0; 
-let timeLeft = 500; 
+
+const scoreEl = document.getElementById('scores'); 
 let score = 0;
-// let btnValue = questionsArray[id].a[i].isCorrect; 
+
+
+const topScoresContainer = document.getElementById('top-scores-container');
+let topScoresList = document.getElementById('top-scores-ol');
+// const username = document.getElementById('username'); 
 
 
 
 // FUNCTION TO START QUIZ ON START BUTTON CLICK
 
 function startQuiz() {
-    startButton.addEventListener('click', function() {
-        startButton.classList.add('hide');
+    startBtn.addEventListener('click', function() {
+        startBtn.classList.add('hide');
         timer.classList.remove('hide'); 
         setTime();
         questionContainer.classList.remove('hide');
@@ -204,7 +208,7 @@ function showQuestion(id) {
             optionBtn.forEach((btn, i) => {
             btn.innerText = questionsArray[id].a[i].text; 
             btn.addEventListener('click', function() { 
-                nextButton.classList.remove('hide');
+                nextBtn.classList.remove('hide');
                 console.log(questionsArray[id].a[i].isCorrect); 
                 console.log(btn.classList); 
                 if (questionsArray[id].a[i].isCorrect) {
@@ -227,43 +231,53 @@ function showQuestion(id) {
 // FUNCTION TO RESET THE QUESTION TEXT AND VALUES
 
 function resetQuestion() {
-    nextButton.classList.add('hide'); 
+    nextBtn.classList.add('hide'); 
     question.innerText = ''; 
     optionBtn.forEach((btn) => {
         btn.innerText = '';
-        score = 0;
-        btn.value = '' 
+        // score = 0;
+        btn.value = ''; 
         btn.classList.remove('correct');
         btn.classList.remove('incorrect');
     })
  } 
 
+ 
 // EVENT LISTENER ON 'NEXT' TO ITERATE THROUGH QUESTIONS ARRAY
 
- nextButton.addEventListener('click', function() {
+ nextBtn.addEventListener('click', function() {
     resetQuestion();  
     questionCount++; 
     showQuestion(questionCount); 
 })
 
 
-
-
 function displayUserInput() {
     questionContainer.classList.add('hide'); 
-    userContainer.classList.remove('hide'); 
+    topScoresContainer.classList.remove('hide'); 
     // timer.
 }
 
-// submitBtn.addEventListener('click' function(event) {
-//     let username = document.querySelector('#username').input; 
+submitBtn.addEventListener('click', function(event) {
+    let username = document.querySelector('#username').input; 
+    let userScore = score; 
+    // if (username === '') {
+    //     console.log('missing'); 
+    // }
 
-//     if (username === '') {
-//         console.log('missing'); 
-//     }
-// })
+    localStorage.setItem('username', username); 
+    localStorage.setItem('userScore', userScore); 
 
+    renderTopScores()    
 
+})
+
+function renderTopScores() {
+    let username = localStorage.getItem('username'); 
+    let userScore = localStorage.getItem('userScore'); 
+    let li1 = `${username}: ${userScore}`; 
+    topScoresList.appendChild(li1)
+}
 
 
 
