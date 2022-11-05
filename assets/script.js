@@ -223,20 +223,6 @@ function showQuestion(id) {
 }
 
 
-function displayUserInput() {
-    questionContainer.classList.add('hide'); 
-    userContainer.classList.remove('hide'); 
-    // timer.
-}
-
-// submitBtn.addEventListener('click' function(event) {
-//     let username = document.querySelector('#username').input; 
-
-//     if (username === '') {
-//         console.log('missing'); 
-//     }
-// })
-
 
 // FUNCTION TO RESET THE QUESTION TEXT AND VALUES
 
@@ -259,6 +245,25 @@ function resetQuestion() {
     questionCount++; 
     showQuestion(questionCount); 
 })
+
+
+
+
+function displayUserInput() {
+    questionContainer.classList.add('hide'); 
+    userContainer.classList.remove('hide'); 
+    // timer.
+}
+
+// submitBtn.addEventListener('click' function(event) {
+//     let username = document.querySelector('#username').input; 
+
+//     if (username === '') {
+//         console.log('missing'); 
+//     }
+// })
+
+
 
 
 
