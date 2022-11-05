@@ -259,15 +259,17 @@ function displayUserInput() {
 }
 
 submitBtn.addEventListener('click', function(event) {
-    let username = document.querySelector('#username').input; 
+    let username = document.querySelector('#username').value; 
     let userScore = score; 
-    // if (username === '') {
-    //     console.log('missing'); 
-    // }
-
-    localStorage.setItem('username', username); 
-    localStorage.setItem('userScore', userScore); 
-
+    if (username === ''){
+        console.log('missing'); 
+    } else {
+        console.log(username); 
+        console.log(userScore); 
+        localStorage.setItem('username', username); 
+        localStorage.setItem('userScore', userScore); 
+    }
+    
     renderTopScores()    
 
 })
@@ -276,7 +278,7 @@ function renderTopScores() {
     let username = localStorage.getItem('username'); 
     let userScore = localStorage.getItem('userScore'); 
     let li1 = `${username}: ${userScore}`; 
-    topScoresList.appendChild(li1)
+    console.log = li1; 
 }
 
 
