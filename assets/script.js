@@ -132,14 +132,16 @@ let questionsArray = [{
 
 const startButton = document.getElementById('start-btn'); 
 const nextButton = document.getElementById('next-btn'); 
-const questionContainer = document.getElementById('question-container')
+const submitBtn = document.getElementById('submit-btn'); 
+const questionContainer = document.getElementById('question-container');
 const question = document.getElementById('question');
-let questionCount = 0; 
 const optionBtn = document.querySelectorAll('.option');
-// let currentQuestion = questionsArray[id]; 
 const answer = document.getElementById('answer');
 const scoreEl = document.getElementById('scores'); 
 const timer = document.getElementById('timerTxt'); 
+const userContainer = document.getElementById('user-container');
+// const username = document.getElementById('username'); 
+let questionCount = 0; 
 let timeLeft = 500; 
 let score = 0;
 // let btnValue = questionsArray[id].a[i].isCorrect; 
@@ -157,6 +159,7 @@ function startQuiz() {
     })
     showQuestion(questionCount); 
 }
+
 
 // FUNCTION TO SET TIMER
 
@@ -185,6 +188,7 @@ function resetTime() {
     setTime();
 }
 
+
 /**
  * FUNCTION TO DISPLAY QUESTION
  * This function iterates through the answers in the questionsArray and populates them in the options buttons. 
@@ -193,43 +197,70 @@ function resetTime() {
  */
 
 function showQuestion(id) {
-    resetQuestion();  
-    question.innerText = questionsArray[id].q; 
-
-    // Iterates through options array, notes if correct/incorrect and takes appropriate action until it runs out of questions.
-        optionBtn.forEach((btn, i) => {
-        btn.innerText = questionsArray[id].a[i].text; 
-        btn.addEventListener('click', function() {
-            nextButton.classList.remove('hide');
-            console.log(questionsArray[id].a[i].isCorrect); 
-            console.log(btn.classList); 
-            if (questionsArray[id].a[i].isCorrect) {
-                btn.classList.add('correct');
-                score++; 
-                scoreEl.innerText = `Score: ${score}`; 
-            } else {
-                btn.classList.add('incorrect'); 
-                timeLeft = timeLeft - 5; 
-            }
-        });
-    }); 
+    // if/else move through questions until there are no longer questions to display
+    if (questionCount < questionsArray.length) {
+        question.innerText = questionsArray[id].q; 
+        // Iterates through options array, notes if correct/incorrect and takes appropriate action until it runs out of questions.
+            optionBtn.forEach((btn, i) => {
+            btn.innerText = questionsArray[id].a[i].text; 
+            btn.addEventListener('click', function() { 
+                nextButton.classList.remove('hide');
+                console.log(questionsArray[id].a[i].isCorrect); 
+                console.log(btn.classList); 
+                if (questionsArray[id].a[i].isCorrect) {
+                    btn.classList.add('correct');
+                    score++; 
+                    scoreEl.innerText = `Score: ${score}`; 
+                } else {
+                    btn.classList.add('incorrect'); 
+                    timeLeft = timeLeft - 5; 
+                }
+                });
+            }); 
+    } else {
+        displayUserInput(); 
+    }
 }
+
+
+function displayUserInput() {
+    questionContainer.classList.add('hide'); 
+    userContainer.classList.remove('hide'); 
+    // timer.
+}
+
+// submitBtn.addEventListener('click' function(event) {
+//     let username = document.querySelector('#username').input; 
+
+//     if (username === '') {
+//         console.log('missing'); 
+//     }
+// })
+
+
+// FUNCTION TO RESET THE QUESTION TEXT AND VALUES
 
 function resetQuestion() {
     nextButton.classList.add('hide'); 
     question.innerText = ''; 
-    optionBtn.forEach(function (btn, i) {
+    optionBtn.forEach((btn) => {
         btn.innerText = '';
         score = 0;
+        btn.value = '' 
         btn.classList.remove('correct');
         btn.classList.remove('incorrect');
     })
  } 
 
+// EVENT LISTENER ON 'NEXT' TO ITERATE THROUGH QUESTIONS ARRAY
+
  nextButton.addEventListener('click', function() {
+    resetQuestion();  
     questionCount++; 
     showQuestion(questionCount); 
 })
+
+
 
 startQuiz(); 
 
