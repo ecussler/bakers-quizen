@@ -54,78 +54,78 @@ let questionsArray = [{
         {text: `Sweetened ricotta`, isCorrect: true}
     ]
 }, 
-{
-    id: 5, 
-    q: `In the bread making, what is the process of folding and pressing dough to create gluten?`,
-    a: [{text: `Leavening`, isCorrect: false}, 
-        {text: `Kneading`, isCorrect: true}, 
-        {text: `Proofing`, isCorrect: false}, 
-        {text: `Laminating`, isCorrect: false}
-    ]
-},  
-{
-    id: 6, 
-    q: `When baking a cake, which of the following is NOT a possible rising agent?`,
-    a: [{text: `Powdered sugar`, isCorrect: true}, 
-        {text: `Eggs`, isCorrect: false}, 
-        {text: `Steam`, isCorrect: false}, 
-        {text: `Baking powder`, isCorrect: false}
-    ]
-},
-{
-    id: 7, 
-    q: `What are the two main ingredients of a chocolate ganache?`,
-    a: [{text: `Chocolate and butter`, isCorrect: false}, 
-        {text: `Chocolate and heavy cream`, isCorrect: true}, 
-        {text: `Chocolate and whole milk`, isCorrect: false}, 
-        {text: `Chocolate and more chocolate`, isCorrect: false}
-    ]
-},
-{
-    id: 8, 
-    q: `Which wheat-based flour has the LEAST amount of gluten in it?`,
-    a: [{text: `All-purpose flour`, isCorrect: false}, 
-        {text: `Bread flour`, isCorrect: false}, 
-        {text: `Cake flour`, isCorrect: true}, 
-        {text: `Pastry flour`, isCorrect: false}
-    ]
-}, 
-{
-    id: 9, 
-    q: `In pie baking, what is the process called when the crust is baked fully before adding any filling?`,
-    a: [{text: `Full baking`, isCorrect: false}, 
-        {text: `Par-baking`, isCorrect: false}, 
-        {text: `Blind baking`, isCorrect: true}, 
-        {text: `Shell baking`, isCorrect: false}
-    ]
-},
-{
-    id: 10, 
-    q: `When fed sugar or starch, yeast releases tiny bubbles of what, causing your dough to rise?`,
-    a: [{text: `Caffeine`, isCorrect: false}, 
-        {text: `Carbon dioxide`, isCorrect: true}, 
-        {text: `Oxygen`, isCorrect: false}, 
-        {text: `Water`, isCorrect: false}
-    ]
-},
-{ 
-    id: 11, 
-    q: `What can you use instead of eggs to make a vegan meringue?`,
-    a: [{text: `Coconut cream`, isCorrect: false}, 
-        {text: `Flax egg`, isCorrect: false}, 
-        {text: `Whipped powdered sugar and water`, isCorrect: false}, 
-        {text: `Aqua faba aka. liquid from a can of garbanzo beans!`, isCorrect: true}
-    ]
-}, 
-{
-    id: 12, 
-    q: `Which is the best cookie?`,
-    a: [{text: `Chocolate chip`, isCorrect: true}, 
-        {text: `Ginger molasses`, isCorrect: true}, 
-        {text: `Peanut butter`, isCorrect: true}, 
-        {text: `Snickerdoodle`, isCorrect: true}
-    ]
-}
+// {
+//     id: 5, 
+//     q: `In the bread making, what is the process of folding and pressing dough to create gluten?`,
+//     a: [{text: `Leavening`, isCorrect: false}, 
+//         {text: `Kneading`, isCorrect: true}, 
+//         {text: `Proofing`, isCorrect: false}, 
+//         {text: `Laminating`, isCorrect: false}
+//     ]
+// },  
+// {
+//     id: 6, 
+//     q: `When baking a cake, which of the following is NOT a possible rising agent?`,
+//     a: [{text: `Powdered sugar`, isCorrect: true}, 
+//         {text: `Eggs`, isCorrect: false}, 
+//         {text: `Steam`, isCorrect: false}, 
+//         {text: `Baking powder`, isCorrect: false}
+//     ]
+// },
+// {
+//     id: 7, 
+//     q: `What are the two main ingredients of a chocolate ganache?`,
+//     a: [{text: `Chocolate and butter`, isCorrect: false}, 
+//         {text: `Chocolate and heavy cream`, isCorrect: true}, 
+//         {text: `Chocolate and whole milk`, isCorrect: false}, 
+//         {text: `Chocolate and more chocolate`, isCorrect: false}
+//     ]
+// },
+// {
+//     id: 8, 
+//     q: `Which wheat-based flour has the LEAST amount of gluten in it?`,
+//     a: [{text: `All-purpose flour`, isCorrect: false}, 
+//         {text: `Bread flour`, isCorrect: false}, 
+//         {text: `Cake flour`, isCorrect: true}, 
+//         {text: `Pastry flour`, isCorrect: false}
+//     ]
+// }, 
+// {
+//     id: 9, 
+//     q: `In pie baking, what is the process called when the crust is baked fully before adding any filling?`,
+//     a: [{text: `Full baking`, isCorrect: false}, 
+//         {text: `Par-baking`, isCorrect: false}, 
+//         {text: `Blind baking`, isCorrect: true}, 
+//         {text: `Shell baking`, isCorrect: false}
+//     ]
+// },
+// {
+//     id: 10, 
+//     q: `When fed sugar or starch, yeast releases tiny bubbles of what, causing your dough to rise?`,
+//     a: [{text: `Caffeine`, isCorrect: false}, 
+//         {text: `Carbon dioxide`, isCorrect: true}, 
+//         {text: `Oxygen`, isCorrect: false}, 
+//         {text: `Water`, isCorrect: false}
+//     ]
+// },
+// { 
+//     id: 11, 
+//     q: `What can you use instead of eggs to make a vegan meringue?`,
+//     a: [{text: `Coconut cream`, isCorrect: false}, 
+//         {text: `Flax egg`, isCorrect: false}, 
+//         {text: `Whipped powdered sugar and water`, isCorrect: false}, 
+//         {text: `Aqua faba aka. liquid from a can of garbanzo beans!`, isCorrect: true}
+//     ]
+// }, 
+// {
+//     id: 12, 
+//     q: `Which is the best cookie?`,
+//     a: [{text: `Chocolate chip`, isCorrect: true}, 
+//         {text: `Ginger molasses`, isCorrect: true}, 
+//         {text: `Peanut butter`, isCorrect: true}, 
+//         {text: `Snickerdoodle`, isCorrect: true}
+//     ]
+// }
 ]
 
 // VARIABLES //
@@ -134,12 +134,14 @@ const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn'); 
 const questionContainer = document.getElementById('question-container')
 const question = document.getElementById('question');
+let questionCount = 0; 
 const optionBtn = document.querySelectorAll('.option');
 // let currentQuestion = questionsArray[id]; 
 const answer = document.getElementById('answer');
-const scores = document.getElementById('scores'); 
+const scoreEl = document.getElementById('scores'); 
 const timer = document.getElementById('timerTxt'); 
-let timeLeft = 8; 
+let timeLeft = 500; 
+let score = 0;
 // let btnValue = questionsArray[id].a[i].isCorrect; 
 
 
@@ -149,15 +151,17 @@ let timeLeft = 8;
 function startQuiz() {
     startButton.addEventListener('click', function() {
         startButton.classList.add('hide');
+        timer.classList.remove('hide'); 
         setTime();
-        console.log('Start button clicked'); 
         questionContainer.classList.remove('hide');
-    }
-)}
+    })
+    showQuestion(questionCount); 
+}
 
 // FUNCTION TO SET TIMER
 
 function setTime() {
+    score = 0; 
     var timerInterval = setInterval(function() {
         timeLeft--; 
         timer.textContent = `You have ${timeLeft} seconds left`;
@@ -173,9 +177,18 @@ function setTime() {
 }
 
 
+// FUNCTION TO RESET TIMER
+
+function resetTime() {
+    timeLeft = 8; 
+    timer.classList.remove('hide'); 
+    setTime();
+}
+
 /**
  * FUNCTION TO DISPLAY QUESTION
  * This function iterates through the answers in the questionsArray and populates them in the options buttons. 
+ * Determines if the clicked button is correct; adds points for correct, decrements timer for incorrect. 
  * @param {*} id 
  */
 
@@ -183,37 +196,41 @@ function showQuestion(id) {
     resetQuestion();  
     question.innerText = questionsArray[id].q; 
 
-    optionBtn.forEach((btn, i) => {
+    // Iterates through options array, notes if correct/incorrect and takes appropriate action until it runs out of questions.
+        optionBtn.forEach((btn, i) => {
         btn.innerText = questionsArray[id].a[i].text; 
-        btn.nodeValue = questionsArray[id].a[i].isCorrect;
         btn.addEventListener('click', function() {
-            console.log(questionsArray[id].a[i].text); 
-            console.log(questionsArray[id].a[i].nodeValue); 
-            nextButton.classList.remove('hide'); 
-
-            // if (btn.value == true) {
-            //     btn.classList.add('correct');
-            // } else {
-            //     btn.classList.add('incorrect'); 
-            // }
+            nextButton.classList.remove('hide');
+            console.log(questionsArray[id].a[i].isCorrect); 
+            console.log(btn.classList); 
+            if (questionsArray[id].a[i].isCorrect) {
+                btn.classList.add('correct');
+                score++; 
+                scoreEl.innerText = `Score: ${score}`; 
+            } else {
+                btn.classList.add('incorrect'); 
+                timeLeft = timeLeft - 5; 
+            }
         });
-    })
+    }); 
 }
 
 function resetQuestion() {
     nextButton.classList.add('hide'); 
     question.innerText = ''; 
-    optionBtn.forEach((btn, i) => {
-        btn.innerText = ''; 
-        btn.nodeValue = ''; 
+    optionBtn.forEach(function (btn, i) {
+        btn.innerText = '';
+        score = 0;
+        btn.classList.remove('correct');
+        btn.classList.remove('incorrect');
     })
  } 
 
  nextButton.addEventListener('click', function() {
-    console.log('next clicked'); 
-    showQuestion(id++); 
+    questionCount++; 
+    showQuestion(questionCount); 
 })
 
 startQuiz(); 
-showQuestion(0); 
+
 
