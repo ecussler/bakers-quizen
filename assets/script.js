@@ -129,32 +129,58 @@ let questionsArray = [{
 ]
 
 // VARIABLES //
+
 const startButton = document.getElementById('start-btn'); 
 const nextButton = document.getElementById('next-btn'); 
 const questionContainer = document.getElementById('question-container')
-const optionBtn = document.querySelectorAll('.option'); 
 const question = document.getElementById('question');
+const optionBtn = document.querySelectorAll('.option');
+// let currentQuestion = questionsArray[id]; 
 const answer = document.getElementById('answer');
 const scores = document.getElementById('scores'); 
-const timer = document.getElementById('timer'); 
+const timer = document.getElementById('timerTxt'); 
+let timeLeft = 8; 
+// let btnValue = questionsArray[id].a[i].isCorrect; 
 
+
+
+// FUNCTION TO START QUIZ ON START BUTTON CLICK
 
 function startQuiz() {
     startButton.addEventListener('click', function() {
         startButton.classList.add('hide');
-        // Need to start timer in here somewhere
+        setTime();
         console.log('Start button clicked'); 
         questionContainer.classList.remove('hide');
     }
 )}
 
+// FUNCTION TO SET TIMER
+
+function setTime() {
+    var timerInterval = setInterval(function() {
+        timeLeft--; 
+        timer.textContent = `You have ${timeLeft} seconds left`;
+        
+        if(timeLeft === 0) {
+            timer.classList.add('hide'); 
+            clearInterval(timer); 
+            questionContainer.classList.add('hide'); 
+            startButton.classList.remove('hide'); 
+            startButton.innerText = `START OVER`; 
+        }
+    }, 1000); 
+}
+
+
 /**
+ * FUNCTION TO DISPLAY QUESTION
  * This function iterates through the answers in the questionsArray and populates them in the options buttons. 
  * @param {*} id 
  */
 
 function showQuestion(id) {
-    resetQuestion(); 
+    resetQuestion();  
     question.innerText = questionsArray[id].q; 
 
     optionBtn.forEach((btn, i) => {
@@ -162,8 +188,9 @@ function showQuestion(id) {
         btn.nodeValue = questionsArray[id].a[i].isCorrect;
         btn.addEventListener('click', function() {
             console.log(questionsArray[id].a[i].text); 
-            nextButton.classList.remove('hide'); 
             console.log(questionsArray[id].a[i].nodeValue); 
+            nextButton.classList.remove('hide'); 
+
             // if (btn.value == true) {
             //     btn.classList.add('correct');
             // } else {
@@ -184,7 +211,7 @@ function resetQuestion() {
 
  nextButton.addEventListener('click', function() {
     console.log('next clicked'); 
-    
+    showQuestion(id++); 
 })
 
 startQuiz(); 
