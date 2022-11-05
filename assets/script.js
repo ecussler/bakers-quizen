@@ -158,8 +158,8 @@ function startQuiz() {
     startBtn.addEventListener('click', function() {
         startBtn.classList.add('hide');
         timer.classList.remove('hide'); 
-        setTime();
         questionContainer.classList.remove('hide');
+        setTime();
     })
     showQuestion(questionCount); 
 }
@@ -255,14 +255,15 @@ function resetQuestion() {
 function displayUserInput() {
     questionContainer.classList.add('hide'); 
     topScoresContainer.classList.remove('hide'); 
-    // timer.
 }
 
 submitBtn.addEventListener('click', function(event) {
     let username = document.querySelector('#username').value; 
     let userScore = score; 
-    if (username === ''){
+    if (username === '') {
         console.log('missing'); 
+        window.alert('Please enter your initials'); 
+        return; 
     } else {
         console.log(username); 
         console.log(userScore); 
@@ -277,8 +278,9 @@ submitBtn.addEventListener('click', function(event) {
 function renderTopScores() {
     let username = localStorage.getItem('username'); 
     let userScore = localStorage.getItem('userScore'); 
-    let li1 = `${username}: ${userScore}`; 
-    console.log = li1; 
+    console.log('got username and score'); 
+    
+    
 }
 
 
