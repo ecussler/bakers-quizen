@@ -16,12 +16,6 @@ body {
     color:#745350; 
 }
 
-p {
-    font-size: 14pt;
-    font-family: Raleway, Arial, Helvetica, sans-serif;
-    color: #745350;
-    line-height: 1.5;
-}
 h1, h2, h3, h4, h5, h6 {
     font-family: Dosis, Arial, Helvetica, sans-serif;
 }
@@ -29,6 +23,16 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 30px;
 }
+
+p {
+    font-size: 14pt;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    color: #745350;
+    line-height: 1.5;
+}
+
+
+/* BUTTON STYLES */
 
 button {
     font-family: Dosis, Arial, Helvetica, sans-serif;
@@ -40,6 +44,39 @@ button {
     height: 100px;
     width: 200px;
 }
+
+.next-btn {
+    margin: 20px; 
+    height: 50px;
+    width: 100px;
+    background-color: #ecaa8a;
+}
+
+button:hover {
+    background-color: #e7c1a9; 
+    border-width: 5px solid #ecaa8a;
+    border-color: #ecaa8a; 
+}
+
+
+/* BODY STYLES */
+
+.card {
+    padding: 30px; 
+}
+
+.timer {
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+}
+
+.question-container {
+    font-family: Dosis, Arial, Helvetica, sans-serif;
+    color: #745350;
+    /* margin: 20px;      */
+}
+
+
+/* CLASS STYLES TO ADD/REMOVE IN JAVASCRIPT */
 
 .hide {
     display: none; 
@@ -54,12 +91,6 @@ button {
 
 } */
 
-.next-btn {
-    margin: 20px; 
-    height: 50px;
-    width: 100px;
-    background-color: #ecaa8a;
-}
 
 /* HEADER STYLES */
 
@@ -76,26 +107,4 @@ header p {
     text-align: center;    
 }
 
-/* BODY STYLES */
 
-.card {
-    padding: 30px; 
-}
-
-.timer {
-    font-family: Raleway, Arial, Helvetica, sans-serif;
-}
-
-
-
-.question-container {
-    font-family: Dosis, Arial, Helvetica, sans-serif;
-    color: #745350;
-    /* margin: 20px;      */
-}
-
-button:hover {
-    background-color: #e7c1a9; 
-    border-width: 5px solid #ecaa8a;
-    border-color: #ecaa8a; 
-}
