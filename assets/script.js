@@ -210,7 +210,7 @@ function showQuestion(id) {
             btn.addEventListener('click', function() { 
                 nextBtn.classList.remove('hide');
                 console.log(questionsArray[id].answer[i].isCorrect); 
-                console.log(btn.classList.length); 
+                console.log(btn.classList); 
                 if (questionsArray[id].answer[i].isCorrect) {
                     btn.classList.add('correct');
                     score++; 
@@ -236,9 +236,8 @@ function resetQuestion() {
     optionBtn.forEach((btn) => {
         btn.innerText = '';
         btn.value = ''; 
-        btn.classList.remove('correct');
+        btn.classList.remove('correct'); 
         btn.classList.remove('incorrect');
-
     })
  } 
 
@@ -252,10 +251,15 @@ function resetQuestion() {
 })
 
 
+// DISPLAYS USER INPUT SCREEN TO ENTER INITIALS
+
 function displayUserInput() {
     questionContainer.classList.add('hide'); 
     topScoresContainer.classList.remove('hide'); 
 }
+
+
+// EVENT LISTENER ON SUBMIT BUTTON STORES INFO TO LOCAL STORAGE AND POPULATES NAME/SCORE TO LIST
 
 submitBtn.addEventListener('click', function(event) {
     let username = document.querySelector('#username').value; 
@@ -275,12 +279,20 @@ submitBtn.addEventListener('click', function(event) {
 
 })
 
+
+// FUNCTION TO GET STORED ITEMS FROM LOCAL AND APPEND THEM TO THE ORDERED LIST
+
 function renderTopScores() {
     let username = localStorage.getItem('username'); 
     let userScore = localStorage.getItem('userScore'); 
-    console.log('got username and score'); 
 
-    
+    console.log(username);
+    console.log(userScore); 
+    let listEl = document.createElement('ol'); 
+    topScoresContainer.appendChild(listEl); 
+    let liEl = document.createElement('li'); 
+    liEl.textContent = `${username}: ${userScore} points`; 
+    listEl.appendChild(liEl); 
 }
 
 
