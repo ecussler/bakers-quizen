@@ -12,7 +12,7 @@
 let questionsArray = [{
     id: 0, 
     q: `Traditionally, what is the crust on a cheesecake made of?`, 
-    a: [{text: `Graham cracker`, isCorrect: true}, 
+    answer: [{text: `Graham cracker`, isCorrect: true}, 
         {text: `Ladyfingers`, isCorrect: false }, 
         {text: 'Pastry', isCorrect: false}, 
         {text: 'Oreos', isCorrect: false}
@@ -21,7 +21,7 @@ let questionsArray = [{
 {
     id: 1, 
     q: `What gives brown sugar its color? `, 
-    a: [{text: 'Molasses', isCorrect: true}, 
+    answer: [{text: 'Molasses', isCorrect: true}, 
         {text: 'Golden corn syrup', isCorrect: false }, 
         {text: 'Vanilla extract', isCorrect: false}, 
         {text: 'Maple syrup', isCorrect: false}
@@ -30,7 +30,7 @@ let questionsArray = [{
 {
     id: 2, 
     q: `What are the two main ingredients in an American buttercream?`,
-    a: [{text: `Egg whites and butter`, isCorrect: false}, 
+    answer: [{text: `Egg whites and butter`, isCorrect: false}, 
         {text: `Granulated sugar and butter`, isCorrect: false}, 
         {text: `Powdered sugar and shortening`, isCorrect: false}, 
         {text: `Powdered sugar and butter`, isCorrect: true}
@@ -39,7 +39,7 @@ let questionsArray = [{
 {
     id: 3, 
     q: `Who is the "male judge" on the Great British Baking Show?`,
-    a: [{text: `Anton Ego`, isCorrect: false}, 
+    answer: [{text: `Anton Ego`, isCorrect: false}, 
         {text: `Paul Hollywood`, isCorrect: true}, 
         {text: `Duff Goldman`, isCorrect: false}, 
         {text: `Samuel Girard`, isCorrect: false}
@@ -48,7 +48,7 @@ let questionsArray = [{
 {
     id: 4, 
     q: `Traditionally, what cheese is used to fill cannoli?`,
-    a: [{text: `Sweetened cream cheese`, isCorrect: false}, 
+    answer: [{text: `Sweetened cream cheese`, isCorrect: false}, 
         {text: `Mascarpone`, isCorrect: false}, 
         {text: `Blended cottage cheese`, isCorrect: false}, 
         {text: `Sweetened ricotta`, isCorrect: true}
@@ -159,6 +159,7 @@ function startQuiz() {
         startBtn.classList.add('hide');
         timer.classList.remove('hide'); 
         questionContainer.classList.remove('hide');
+        score = 0; // for whatever reason this is not resetting - similar issue to the quiz remembering previous inputs, button clicks, class assignments, etc.?
         setTime();
     })
     showQuestion(questionCount); 
@@ -168,29 +169,28 @@ function startQuiz() {
 // FUNCTION TO SET TIMER
 
 function setTime() {
-    score = 0; 
+    timeLeft = 500; 
     var timerInterval = setInterval(function() {
         timeLeft--; 
         timer.textContent = `You have ${timeLeft} seconds left`;
         
         if(timeLeft === 0) {
             timer.classList.add('hide'); 
-            clearInterval(timer); 
+            clearTimeout(timer); 
             questionContainer.classList.add('hide'); 
-            startButton.classList.remove('hide'); 
-            startButton.innerText = `START OVER`; 
+            startBtn.classList.remove('hide'); 
         }
     }, 1000); 
 }
 
 
-// FUNCTION TO RESET TIMER
+// // FUNCTION TO RESET TIMER
 
-function resetTime() {
-    timeLeft = 8; 
-    timer.classList.remove('hide'); 
-    setTime();
-}
+// function resetTime() {
+//     timeLeft = 8; 
+//     timer.classList.remove('hide'); 
+//     setTime();
+// }
 
 
 /**
@@ -206,12 +206,12 @@ function showQuestion(id) {
         question.innerText = questionsArray[id].q; 
         // Iterates through options array, notes if correct/incorrect and takes appropriate action until it runs out of questions.
             optionBtn.forEach((btn, i) => {
-            btn.innerText = questionsArray[id].a[i].text; 
+            btn.innerText = questionsArray[id].answer[i].text; 
             btn.addEventListener('click', function() { 
                 nextBtn.classList.remove('hide');
-                console.log(questionsArray[id].a[i].isCorrect); 
-                console.log(btn.classList); 
-                if (questionsArray[id].a[i].isCorrect) {
+                console.log(questionsArray[id].answer[i].isCorrect); 
+                console.log(btn.classList.length); 
+                if (questionsArray[id].answer[i].isCorrect) {
                     btn.classList.add('correct');
                     score++; 
                     scoreEl.innerText = `Score: ${score}`; 
@@ -235,10 +235,10 @@ function resetQuestion() {
     question.innerText = ''; 
     optionBtn.forEach((btn) => {
         btn.innerText = '';
-        // score = 0;
         btn.value = ''; 
         btn.classList.remove('correct');
         btn.classList.remove('incorrect');
+
     })
  } 
 
@@ -279,7 +279,7 @@ function renderTopScores() {
     let username = localStorage.getItem('username'); 
     let userScore = localStorage.getItem('userScore'); 
     console.log('got username and score'); 
-    
+
     
 }
 
