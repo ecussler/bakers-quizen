@@ -136,11 +136,12 @@ const optionBtn = document.querySelectorAll('.option');
 const submitBtn = document.getElementById('submit-btn'); 
 
 const timer = document.getElementById('timerTxt'); 
-let timeLeft = 500; 
+let timeLeft = 8; 
 
 const questionContainer = document.getElementById('question-container');
 const question = document.getElementById('question');
 let questionCount = 0; 
+const answerContainer = document.getElementById('answer-text'); 
 
 const scoreEl = document.getElementById('scores'); 
 let score = 0;
@@ -159,6 +160,7 @@ function startQuiz() {
         startBtn.classList.add('hide');
         timer.classList.remove('hide'); 
         questionContainer.classList.remove('hide');
+        topScoresContainer.classList.add('hide');
         score = 0; // for whatever reason this is not resetting - similar issue to the quiz remembering previous inputs, button clicks, class assignments, etc.?
         setTime();
     })
@@ -169,12 +171,12 @@ function startQuiz() {
 // FUNCTION TO SET TIMER
 
 function setTime() {
-    timeLeft = 500; 
+    timeLeft = 8; 
     var timerInterval = setInterval(function() {
         timeLeft--; 
         timer.textContent = `You have ${timeLeft} seconds left`;
         
-        if(timeLeft === 0) {
+        if(timeLeft <= 0) {
             timer.classList.add('hide'); 
             clearTimeout(timer); 
             questionContainer.classList.add('hide'); 
@@ -182,15 +184,6 @@ function setTime() {
         }
     }, 1000); 
 }
-
-
-// // FUNCTION TO RESET TIMER
-
-// function resetTime() {
-//     timeLeft = 8; 
-//     timer.classList.remove('hide'); 
-//     setTime();
-// }
 
 
 /**
@@ -212,11 +205,13 @@ function showQuestion(id) {
                 console.log(questionsArray[id].answer[i].isCorrect); 
                 console.log(btn.classList); 
                 if (questionsArray[id].answer[i].isCorrect) {
-                    btn.classList.add('correct');
+                    // btn.classList.add('correct');
+                    answerContainer.innerText = 'You got it!'
                     score++; 
                     scoreEl.innerText = `Score: ${score}`; 
                 } else {
-                    btn.classList.add('incorrect'); 
+                    // btn.classList.add('incorrect'); 
+                    answerContainer.innerText = 'Sorry - that incorrect.'
                     timeLeft = timeLeft - 5; 
                 }
                 });
@@ -233,11 +228,10 @@ function showQuestion(id) {
 function resetQuestion() {
     nextBtn.classList.add('hide'); 
     question.innerText = ''; 
+    answerContainer.innerText = ''; 
     optionBtn.forEach((btn) => {
         btn.innerText = '';
         btn.value = ''; 
-        btn.classList.remove('correct'); 
-        btn.classList.remove('incorrect');
     })
  } 
 
@@ -254,6 +248,8 @@ function resetQuestion() {
 // DISPLAYS USER INPUT SCREEN TO ENTER INITIALS
 
 function displayUserInput() {
+    timer.classList.add('hide'); 
+
     questionContainer.classList.add('hide'); 
     topScoresContainer.classList.remove('hide'); 
 }
@@ -274,7 +270,8 @@ submitBtn.addEventListener('click', function(event) {
         localStorage.setItem('username', username); 
         localStorage.setItem('userScore', userScore); 
     }
-    
+    startBtn.classList.remove('hide'); 
+    scoreEl.innerText = `Would you like to play again?`; 
     renderTopScores()    
 
 })
@@ -289,8 +286,8 @@ function renderTopScores() {
     console.log(username);
     console.log(userScore); 
     let listEl = document.createElement('ol'); 
-    topScoresContainer.appendChild(listEl); 
     let liEl = document.createElement('li'); 
+    topScoresContainer.appendChild(listEl); 
     liEl.textContent = `${username}: ${userScore} points`; 
     listEl.appendChild(liEl); 
 }
