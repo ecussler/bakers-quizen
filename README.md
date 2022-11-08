@@ -21,9 +21,9 @@ NA
 
 This application is for potential employers and fellow developers to view my work and test their baking knowledge!
 
-![Website Sample](./assets/photos/Password_Generator.gif)
+![Website Sample](./assets/photos/website-screenshot.png)
 
-https://ecussler.github.io/password-generator/
+https://ecussler.github.io/bakers-quizen/
 
 
 ## Credits
