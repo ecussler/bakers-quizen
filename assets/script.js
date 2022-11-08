@@ -2,7 +2,6 @@
 - create timer
 - function to subtract time if they get answer wrong
 - displaying questions
-- randomize questions (extra credit)
 - display correct/incorrect answer at bottom
 - tally scores and display high scores list
 - try again 
@@ -54,84 +53,85 @@ let questionsArray = [{
         {text: `Sweetened ricotta`, isCorrect: true}
     ]
 }, 
-// {
-//     id: 5, 
-//     q: `In the bread making, what is the process of folding and pressing dough to create gluten?`,
-//     a: [{text: `Leavening`, isCorrect: false}, 
-//         {text: `Kneading`, isCorrect: true}, 
-//         {text: `Proofing`, isCorrect: false}, 
-//         {text: `Laminating`, isCorrect: false}
-//     ]
-// },  
-// {
-//     id: 6, 
-//     q: `When baking a cake, which of the following is NOT a possible rising agent?`,
-//     a: [{text: `Powdered sugar`, isCorrect: true}, 
-//         {text: `Eggs`, isCorrect: false}, 
-//         {text: `Steam`, isCorrect: false}, 
-//         {text: `Baking powder`, isCorrect: false}
-//     ]
-// },
-// {
-//     id: 7, 
-//     q: `What are the two main ingredients of a chocolate ganache?`,
-//     a: [{text: `Chocolate and butter`, isCorrect: false}, 
-//         {text: `Chocolate and heavy cream`, isCorrect: true}, 
-//         {text: `Chocolate and whole milk`, isCorrect: false}, 
-//         {text: `Chocolate and more chocolate`, isCorrect: false}
-//     ]
-// },
-// {
-//     id: 8, 
-//     q: `Which wheat-based flour has the LEAST amount of gluten in it?`,
-//     a: [{text: `All-purpose flour`, isCorrect: false}, 
-//         {text: `Bread flour`, isCorrect: false}, 
-//         {text: `Cake flour`, isCorrect: true}, 
-//         {text: `Pastry flour`, isCorrect: false}
-//     ]
-// }, 
-// {
-//     id: 9, 
-//     q: `In pie baking, what is the process called when the crust is baked fully before adding any filling?`,
-//     a: [{text: `Full baking`, isCorrect: false}, 
-//         {text: `Par-baking`, isCorrect: false}, 
-//         {text: `Blind baking`, isCorrect: true}, 
-//         {text: `Shell baking`, isCorrect: false}
-//     ]
-// },
-// {
-//     id: 10, 
-//     q: `When fed sugar or starch, yeast releases tiny bubbles of what, causing your dough to rise?`,
-//     a: [{text: `Caffeine`, isCorrect: false}, 
-//         {text: `Carbon dioxide`, isCorrect: true}, 
-//         {text: `Oxygen`, isCorrect: false}, 
-//         {text: `Water`, isCorrect: false}
-//     ]
-// },
-// { 
-//     id: 11, 
-//     q: `What can you use instead of eggs to make a vegan meringue?`,
-//     a: [{text: `Coconut cream`, isCorrect: false}, 
-//         {text: `Flax egg`, isCorrect: false}, 
-//         {text: `Whipped powdered sugar and water`, isCorrect: false}, 
-//         {text: `Aqua faba aka. liquid from a can of garbanzo beans!`, isCorrect: true}
-//     ]
-// }, 
-// {
-//     id: 12, 
-//     q: `Which is the best cookie?`,
-//     a: [{text: `Chocolate chip`, isCorrect: true}, 
-//         {text: `Ginger molasses`, isCorrect: true}, 
-//         {text: `Peanut butter`, isCorrect: true}, 
-//         {text: `Snickerdoodle`, isCorrect: true}
-//     ]
-// }
+{
+    id: 5, 
+    q: `In the bread making, what is the process of folding and pressing dough to create gluten?`,
+    a: [{text: `Leavening`, isCorrect: false}, 
+        {text: `Kneading`, isCorrect: true}, 
+        {text: `Proofing`, isCorrect: false}, 
+        {text: `Laminating`, isCorrect: false}
+    ]
+},  
+{
+    id: 6, 
+    q: `When baking a cake, which of the following is NOT a possible rising agent?`,
+    a: [{text: `Powdered sugar`, isCorrect: true}, 
+        {text: `Eggs`, isCorrect: false}, 
+        {text: `Steam`, isCorrect: false}, 
+        {text: `Baking powder`, isCorrect: false}
+    ]
+},
+{
+    id: 7, 
+    q: `What are the two main ingredients of a chocolate ganache?`,
+    a: [{text: `Chocolate and butter`, isCorrect: false}, 
+        {text: `Chocolate and heavy cream`, isCorrect: true}, 
+        {text: `Chocolate and whole milk`, isCorrect: false}, 
+        {text: `Chocolate and more chocolate`, isCorrect: false}
+    ]
+},
+{
+    id: 8, 
+    q: `Which wheat-based flour has the LEAST amount of gluten in it?`,
+    a: [{text: `All-purpose flour`, isCorrect: false}, 
+        {text: `Bread flour`, isCorrect: false}, 
+        {text: `Cake flour`, isCorrect: true}, 
+        {text: `Pastry flour`, isCorrect: false}
+    ]
+}, 
+{
+    id: 9, 
+    q: `In pie baking, what is the process called when the crust is baked fully before adding any filling?`,
+    a: [{text: `Full baking`, isCorrect: false}, 
+        {text: `Par-baking`, isCorrect: false}, 
+        {text: `Blind baking`, isCorrect: true}, 
+        {text: `Shell baking`, isCorrect: false}
+    ]
+},
+{
+    id: 10, 
+    q: `When fed sugar or starch, yeast releases tiny bubbles of what, causing your dough to rise?`,
+    a: [{text: `Caffeine`, isCorrect: false}, 
+        {text: `Carbon dioxide`, isCorrect: true}, 
+        {text: `Oxygen`, isCorrect: false}, 
+        {text: `Water`, isCorrect: false}
+    ]
+},
+{ 
+    id: 11, 
+    q: `What can you use instead of eggs to make a vegan meringue?`,
+    a: [{text: `Coconut cream`, isCorrect: false}, 
+        {text: `Flax egg`, isCorrect: false}, 
+        {text: `Whipped powdered sugar and water`, isCorrect: false}, 
+        {text: `Aqua faba aka. liquid from a can of garbanzo beans!`, isCorrect: true}
+    ]
+}, 
+{
+    id: 12, 
+    q: `Which is the best cookie?`,
+    a: [{text: `Chocolate chip`, isCorrect: true}, 
+        {text: `Ginger molasses`, isCorrect: true}, 
+        {text: `Peanut butter`, isCorrect: true}, 
+        {text: `Snickerdoodle`, isCorrect: true}
+    ]
+}
 ]
 
 // VARIABLES //
 
 const startBtn = document.getElementById('start-btn'); 
 const nextBtn = document.getElementById('next-btn'); 
+const restartBtn = document.getElementById('restart-btn'); 
 const optionBtn = document.querySelectorAll('.option');
 const submitBtn = document.getElementById('submit-btn'); 
 
@@ -149,7 +149,6 @@ let score = 0;
 
 const topScoresContainer = document.getElementById('top-scores-container');
 let topScoresList = document.getElementById('top-scores-ol');
-// const username = document.getElementById('username'); 
 
 
 
@@ -160,11 +159,32 @@ function startQuiz() {
         startBtn.classList.add('hide');
         timer.classList.remove('hide'); 
         questionContainer.classList.remove('hide');
-        topScoresContainer.classList.add('hide');
-        score = 0; // for whatever reason this is not resetting - similar issue to the quiz remembering previous inputs, button clicks, class assignments, etc.?
+        score = 0; 
         setTime();
     })
+    optionBtn.forEach((btn, i) => {
+        btn.addEventListener('click', function() { 
+            checkCorrect(i); 
+            });
+        }); 
     showQuestion(questionCount); 
+}
+
+
+/**
+ * FUNCTION TO CHECK ANSWER FOR CORRECT
+ * @param {*} i - references index number of questionsCount
+ */
+function checkCorrect(i) { 
+    nextBtn.classList.remove('hide');
+    if (questionsArray[questionCount].answer[i].isCorrect) {
+        answerContainer.innerText = 'You got it!'
+        score++; 
+        scoreEl.innerText = `Score: ${score}`; 
+    } else {
+        answerContainer.innerText = 'Sorry - that incorrect.'
+        timeLeft = timeLeft - 5; 
+    }
 }
 
 
@@ -180,7 +200,7 @@ function setTime() {
             timer.classList.add('hide'); 
             clearTimeout(timer); 
             questionContainer.classList.add('hide'); 
-            startBtn.classList.remove('hide'); 
+            restartBtn.classList.remove('hide'); 
         }
     }, 1000); 
 }
@@ -200,21 +220,6 @@ function showQuestion(id) {
         // Iterates through options array, notes if correct/incorrect and takes appropriate action until it runs out of questions.
             optionBtn.forEach((btn, i) => {
             btn.innerText = questionsArray[id].answer[i].text; 
-            btn.addEventListener('click', function() { 
-                nextBtn.classList.remove('hide');
-                console.log(questionsArray[id].answer[i].isCorrect); 
-                console.log(btn.classList); 
-                if (questionsArray[id].answer[i].isCorrect) {
-                    // btn.classList.add('correct');
-                    answerContainer.innerText = 'You got it!'
-                    score++; 
-                    scoreEl.innerText = `Score: ${score}`; 
-                } else {
-                    // btn.classList.add('incorrect'); 
-                    answerContainer.innerText = 'Sorry - that incorrect.'
-                    timeLeft = timeLeft - 5; 
-                }
-                });
             }); 
     } else {
         displayUserInput(); 
@@ -245,14 +250,17 @@ function resetQuestion() {
 })
 
 
-// DISPLAYS USER INPUT SCREEN TO ENTER INITIALS
+// EVENT LISTENER ON RESTART BUTTON
 
-function displayUserInput() {
-    timer.classList.add('hide'); 
+restartBtn.addEventListener('click', function() {
+    restartBtn.classList.add('hide');
+    timer.classList.remove('hide'); 
+    questionContainer.classList.remove('hide');        
+    topScoresContainer.classList.add('hide');
+    score = 0; 
+    setTime();
+})
 
-    questionContainer.classList.add('hide'); 
-    topScoresContainer.classList.remove('hide'); 
-}
 
 
 // EVENT LISTENER ON SUBMIT BUTTON STORES INFO TO LOCAL STORAGE AND POPULATES NAME/SCORE TO LIST
@@ -261,16 +269,13 @@ submitBtn.addEventListener('click', function(event) {
     let username = document.querySelector('#username').value; 
     let userScore = score; 
     if (username === '') {
-        console.log('missing'); 
         window.alert('Please enter your initials'); 
         return; 
     } else {
-        console.log(username); 
-        console.log(userScore); 
         localStorage.setItem('username', username); 
         localStorage.setItem('userScore', userScore); 
     }
-    startBtn.classList.remove('hide'); 
+    restartBtn.classList.remove('hide'); 
     scoreEl.innerText = `Would you like to play again?`; 
     renderTopScores()    
 
@@ -282,9 +287,6 @@ submitBtn.addEventListener('click', function(event) {
 function renderTopScores() {
     let username = localStorage.getItem('username'); 
     let userScore = localStorage.getItem('userScore'); 
-
-    console.log(username);
-    console.log(userScore); 
     let listEl = document.createElement('ol'); 
     let liEl = document.createElement('li'); 
     topScoresContainer.appendChild(listEl); 
@@ -292,7 +294,13 @@ function renderTopScores() {
     listEl.appendChild(liEl); 
 }
 
+// DISPLAYS USER INPUT SCREEN TO ENTER INITIALS
 
+function displayUserInput() {
+    timer.classList.add('hide'); 
+    questionContainer.classList.add('hide'); 
+    topScoresContainer.classList.remove('hide'); 
+}
 
 startQuiz(); 
 
