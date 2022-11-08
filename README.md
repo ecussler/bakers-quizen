@@ -9,7 +9,7 @@ This project is my first attempt at building a online quiz using web APIs. The q
 - Use of local storage.
 - Responsive classes for correct/incorrect answers. 
 
-I had a more difficult time with this project and it is far from perfect. I learned quite a bit building the quiz and looking at it now, I would definitely change a couple of things in my initial startup to make things easier later on. I'm glad I stuck with my initial code but I'm hoping to revisit this topic when I get more reps with JavaScript and Web APIs under my belt.   
+I had a more difficult time with this project and it is far from perfect. I learned quite a lot building this quiz and looking at it now, I would definitely change a couple of things in my initial startup to make things easier. I'm glad I stuck with my initial code and I've still got some bugs with my TRY AGAIN function but I'm hoping to revisit this topic when I get more reps with JavaScript and Web APIs under my belt.   
 
 
 ## Installation
