@@ -53,78 +53,78 @@ let questionsArray = [{
         {text: `Sweetened ricotta`, isCorrect: true}
     ]
 }, 
-// {
-//     id: 5, 
-//     q: `In the bread making, what is the process of folding and pressing dough to create gluten?`,
-//     a: [{text: `Leavening`, isCorrect: false}, 
-//         {text: `Kneading`, isCorrect: true}, 
-//         {text: `Proofing`, isCorrect: false}, 
-//         {text: `Laminating`, isCorrect: false}
-//     ]
-// },  
-// {
-//     id: 6, 
-//     q: `When baking a cake, which of the following is NOT a possible rising agent?`,
-//     a: [{text: `Powdered sugar`, isCorrect: true}, 
-//         {text: `Eggs`, isCorrect: false}, 
-//         {text: `Steam`, isCorrect: false}, 
-//         {text: `Baking powder`, isCorrect: false}
-//     ]
-// },
-// {
-//     id: 7, 
-//     q: `What are the two main ingredients of a chocolate ganache?`,
-//     a: [{text: `Chocolate and butter`, isCorrect: false}, 
-//         {text: `Chocolate and heavy cream`, isCorrect: true}, 
-//         {text: `Chocolate and whole milk`, isCorrect: false}, 
-//         {text: `Chocolate and more chocolate`, isCorrect: false}
-//     ]
-// },
-// {
-//     id: 8, 
-//     q: `Which wheat-based flour has the LEAST amount of gluten in it?`,
-//     a: [{text: `All-purpose flour`, isCorrect: false}, 
-//         {text: `Bread flour`, isCorrect: false}, 
-//         {text: `Cake flour`, isCorrect: true}, 
-//         {text: `Pastry flour`, isCorrect: false}
-//     ]
-// }, 
-// {
-//     id: 9, 
-//     q: `In pie baking, what is the process called when the crust is baked fully before adding any filling?`,
-//     a: [{text: `Full baking`, isCorrect: false}, 
-//         {text: `Par-baking`, isCorrect: false}, 
-//         {text: `Blind baking`, isCorrect: true}, 
-//         {text: `Shell baking`, isCorrect: false}
-//     ]
-// },
-// {
-//     id: 10, 
-//     q: `When fed sugar or starch, yeast releases tiny bubbles of what, causing your dough to rise?`,
-//     a: [{text: `Caffeine`, isCorrect: false}, 
-//         {text: `Carbon dioxide`, isCorrect: true}, 
-//         {text: `Oxygen`, isCorrect: false}, 
-//         {text: `Water`, isCorrect: false}
-//     ]
-// },
-// { 
-//     id: 11, 
-//     q: `What can you use instead of eggs to make a vegan meringue?`,
-//     a: [{text: `Coconut cream`, isCorrect: false}, 
-//         {text: `Flax egg`, isCorrect: false}, 
-//         {text: `Whipped powdered sugar and water`, isCorrect: false}, 
-//         {text: `Aqua faba aka. liquid from a can of garbanzo beans!`, isCorrect: true}
-//     ]
-// }, 
-// {
-//     id: 12, 
-//     q: `Which is the best cookie?`,
-//     a: [{text: `Chocolate chip`, isCorrect: true}, 
-//         {text: `Ginger molasses`, isCorrect: true}, 
-//         {text: `Peanut butter`, isCorrect: true}, 
-//         {text: `Snickerdoodle`, isCorrect: true}
-//     ]
-// }
+{
+    id: 5, 
+    q: `In the bread making, what is the process of folding and pressing dough to create gluten?`,
+    a: [{text: `Leavening`, isCorrect: false}, 
+        {text: `Kneading`, isCorrect: true}, 
+        {text: `Proofing`, isCorrect: false}, 
+        {text: `Laminating`, isCorrect: false}
+    ]
+},  
+{
+    id: 6, 
+    q: `When baking a cake, which of the following is NOT a possible rising agent?`,
+    a: [{text: `Powdered sugar`, isCorrect: true}, 
+        {text: `Eggs`, isCorrect: false}, 
+        {text: `Steam`, isCorrect: false}, 
+        {text: `Baking powder`, isCorrect: false}
+    ]
+},
+{
+    id: 7, 
+    q: `What are the two main ingredients of a chocolate ganache?`,
+    a: [{text: `Chocolate and butter`, isCorrect: false}, 
+        {text: `Chocolate and heavy cream`, isCorrect: true}, 
+        {text: `Chocolate and whole milk`, isCorrect: false}, 
+        {text: `Chocolate and more chocolate`, isCorrect: false}
+    ]
+},
+{
+    id: 8, 
+    q: `Which wheat-based flour has the LEAST amount of gluten in it?`,
+    a: [{text: `All-purpose flour`, isCorrect: false}, 
+        {text: `Bread flour`, isCorrect: false}, 
+        {text: `Cake flour`, isCorrect: true}, 
+        {text: `Pastry flour`, isCorrect: false}
+    ]
+}, 
+{
+    id: 9, 
+    q: `In pie baking, what is the process called when the crust is baked fully before adding any filling?`,
+    a: [{text: `Full baking`, isCorrect: false}, 
+        {text: `Par-baking`, isCorrect: false}, 
+        {text: `Blind baking`, isCorrect: true}, 
+        {text: `Shell baking`, isCorrect: false}
+    ]
+},
+{
+    id: 10, 
+    q: `When fed sugar or starch, yeast releases tiny bubbles of what, causing your dough to rise?`,
+    a: [{text: `Caffeine`, isCorrect: false}, 
+        {text: `Carbon dioxide`, isCorrect: true}, 
+        {text: `Oxygen`, isCorrect: false}, 
+        {text: `Water`, isCorrect: false}
+    ]
+},
+{ 
+    id: 11, 
+    q: `What can you use instead of eggs to make a vegan meringue?`,
+    a: [{text: `Coconut cream`, isCorrect: false}, 
+        {text: `Flax egg`, isCorrect: false}, 
+        {text: `Whipped powdered sugar and water`, isCorrect: false}, 
+        {text: `Aqua faba aka. liquid from a can of garbanzo beans!`, isCorrect: true}
+    ]
+}, 
+{
+    id: 12, 
+    q: `Which is the best cookie?`,
+    a: [{text: `Chocolate chip`, isCorrect: true}, 
+        {text: `Ginger molasses`, isCorrect: true}, 
+        {text: `Peanut butter`, isCorrect: true}, 
+        {text: `Snickerdoodle`, isCorrect: true}
+    ]
+}
 ]
 
 // VARIABLES //
@@ -136,7 +136,7 @@ const optionBtn = document.querySelectorAll('.option');
 const submitBtn = document.getElementById('submit-btn'); 
 
 const timer = document.getElementById('timerTxt'); 
-let timeLeft = 500; 
+let timeLeft = 300; 
 
 const questionContainer = document.getElementById('question-container');
 const question = document.getElementById('question');
@@ -191,7 +191,7 @@ function checkCorrect(i) {
 // FUNCTION TO SET TIMER
 
 function setTime() {
-    timeLeft = 500; 
+    timeLeft = 300; 
     var timerInterval = setInterval(function() {
         timeLeft--; 
         timer.textContent = `You have ${timeLeft} seconds left`;
